@@ -1,0 +1,9 @@
+[project]
+name = "rave3n-sec"
+version = "0.1.0"
+description = "AI + Regex Vulnerability Scanner"
+authors = [{name = "Your Name"}]
+dependencies = ["typer", "rich"]
+
+[project.scripts]
+raven = "raven.cli:app"
