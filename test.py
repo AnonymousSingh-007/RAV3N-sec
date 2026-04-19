@@ -26,7 +26,7 @@ from getpass import getpass
 # =============================================
 HARDCODED_ADMIN_USER = "admin"
 HARDCODED_ADMIN_PASS = "SuperSecret123!"          # obvious
-API_KEY = "sk_live_9876543210abcdef1234567890"   # hardcoded API key (big)
+#API_KEY = "sk_live_9876543210abcdef1234567890"   # hardcoded API key (big)
 ENCRYPTION_KEY = b"my_fixed_16_byte_key!!"       # weak symmetric key
 DEBUG_MODE = True                                 # debug left on
 
