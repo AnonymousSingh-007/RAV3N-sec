@@ -7,6 +7,9 @@ from collections import Counter
 from raven.scanner import scan_file
 from raven.report import generate_html
 
+# 🔥 ML Hook
+from raven.ml_model import predict
+
 app = typer.Typer()
 console = Console()
 
@@ -19,10 +22,36 @@ SEVERITY_ORDER = {
 
 
 @app.command()
-def scan(path: str, html: bool = False):
+def scan(
+    path: str,
+    html: bool = False,
+    output: str = "report.html",
+    use_ml: bool = True
+):
     """Scan a file for vulnerabilities"""
 
     results = scan_file(path)
+
+    # =========================
+    # 🤖 ML Hook (line-by-line)
+    # =========================
+    if use_ml:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+
+            for i, line in enumerate(lines, start=1):
+                pred, prob = predict(line)
+
+                if pred == 1 and prob > 0.7:
+                    results.append({
+                        "line": i,
+                        "severity": "MEDIUM",
+                        "message": f"ML detected possible vulnerability ({prob:.2f})",
+                        "type": "ml"
+                    })
+        except Exception as e:
+            console.print(f"[yellow]ML skipped: {e}[/yellow]")
 
     if not results:
         console.print("\n[bold green]✅ No issues found[/bold green]\n")
@@ -69,10 +98,12 @@ def scan(path: str, html: bool = False):
 
     console.print(table)
 
-    # 📄 HTML
+    # =========================
+    # 📄 HTML Report Hook
+    # =========================
     if html:
-        generate_html(results)
-        console.print("\n[cyan]📄 HTML report generated: report.html[/cyan]")
+        generate_html(results, output)
+        console.print(f"\n[cyan]📄 HTML report generated: {output}[/cyan]")
 
 
 if __name__ == "__main__":
