@@ -52,7 +52,9 @@ Scan a file for vulnerabilities:
 ```bash
 python -m raven.cli scan test.py
 ```
-
+```bash
+python -m raven.cli test.py --html --output myreport.html     
+```
 ---
 
 ## 📋 Detection Summary
