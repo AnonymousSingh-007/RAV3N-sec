@@ -1,5 +1,6 @@
 import ast
 import re
+from collections import defaultdict
 from raven.rules import RULES
 
 
@@ -13,7 +14,10 @@ def scan_regex(lines):
                     "line": i,
                     "severity": rule["severity"],
                     "message": rule["message"],
-                    "type": "regex"
+                    "type": "regex",
+                    "confidence": rule.get("confidence", 0.7),
+                    "noisy": rule.get("noisy", False),
+                    "fix": rule.get("fix", "")
                 })
 
     return findings
@@ -34,24 +38,50 @@ def scan_ast(code):
                     findings.append({
                         "line": node.lineno,
                         "severity": "HIGH",
-                        "message": "AST: eval() usage detected",
-                        "type": "ast"
+                        "message": "eval() usage detected",
+                        "type": "ast",
+                        "confidence": 0.95,
+                        "noisy": False,
+                        "fix": "Use ast.literal_eval() instead"
                     })
 
                 if node.func.id == "exec":
                     findings.append({
                         "line": node.lineno,
                         "severity": "HIGH",
-                        "message": "AST: exec() usage detected",
-                        "type": "ast"
+                        "message": "exec() usage detected",
+                        "type": "ast",
+                        "confidence": 0.95,
+                        "noisy": False,
+                        "fix": "Avoid exec()"
                     })
 
     return findings
 
 
-def ai_stub(code):
-    # placeholder for future ML model
-    return []
+# 🔥 DEDUP ENGINE
+def deduplicate(findings):
+    grouped = {}
+
+    for f in findings:
+        key = (f["line"], f["message"])
+
+        if key not in grouped:
+            grouped[key] = f.copy()
+            grouped[key]["type"] = {f["type"]}
+        else:
+            grouped[key]["type"].add(f["type"])
+            grouped[key]["confidence"] = max(
+                grouped[key]["confidence"], f["confidence"]
+            )
+
+    # convert type set → string
+    final = []
+    for f in grouped.values():
+        f["type"] = "+".join(sorted(f["type"]))
+        final.append(f)
+
+    return final
 
 
 def scan_file(path):
@@ -63,6 +93,8 @@ def scan_file(path):
     results = []
     results.extend(scan_regex(lines))
     results.extend(scan_ast(code))
-    results.extend(ai_stub(code))
+
+    # 🔥 dedup here
+    results = deduplicate(results)
 
     return results

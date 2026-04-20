@@ -5,28 +5,43 @@ def generate_html(results, output_file="report.html"):
     html = f"""
     <html>
     <head>
-        <title>RAVE3N Report</title>
-        <style>
-            body {{ font-family: Arial; background: #111; color: #eee; }}
-            .high {{ color: red; }}
-            .medium {{ color: orange; }}
-        </style>
+    <style>
+        body {{ background:#0d1117; color:#e6edf3; font-family:Arial; }}
+        table {{ width:100%; border-collapse:collapse; }}
+        th, td {{ padding:10px; border-bottom:1px solid #333; }}
+        th {{ background:#161b22; }}
+        .HIGH {{ color:#ff4d4d; }}
+        .MEDIUM {{ color:#ffcc00; }}
+        .LOW {{ color:#66ff66; }}
+    </style>
     </head>
     <body>
-        <h1>RAVE3N Security Report</h1>
-        <p>Generated: {datetime.now()}</p>
-        <hr>
+
+    <h1>🦅 RAVE3N Report</h1>
+    <p>{datetime.now()}</p>
+
+    <table>
+    <tr>
+        <th>Severity</th>
+        <th>Line</th>
+        <th>Type</th>
+        <th>Message</th>
+        <th>Fix</th>
+    </tr>
     """
 
     for r in results:
-        severity_class = r["severity"].lower()
         html += f"""
-        <p class="{severity_class}">
-        [{r['severity']}] Line {r['line']} - {r['message']}
-        </p>
+        <tr>
+            <td class="{r['severity']}">{r['severity']}</td>
+            <td>{r['line']}</td>
+            <td>{r['type']}</td>
+            <td>{r['message']}</td>
+            <td>{r.get('fix','')}</td>
+        </tr>
         """
 
-    html += "</body></html>"
+    html += "</table></body></html>"
 
-    with open(output_file, "w") as f:
+    with open(output_file, "w", encoding="utf-8") as f:
         f.write(html)
