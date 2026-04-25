@@ -53,7 +53,9 @@ Scan a file for vulnerabilities:
 python -m raven.cli scan test.py
 ```
 ```bash
-python -m raven.cli test.py --html --output myreport.html     
+python -m raven.cli test.py --html --output myreport.html  
+
+python -m raven.cli  tests --html    
 ```
 ---
 
