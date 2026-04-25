@@ -80,7 +80,7 @@ RAV3N-sec/
 │   ├── rules.py      # Core detection logic & AST visitors
 │   ├── reports.py    # UI/Output formatting using Rich
 │   └── __init__.py
-├── test.py           # Sample file for testing vulns
+├── tests/           # Sample folder for testing vulns
 ├── pyproject.toml    # Build system & dependencies
 └── README.md
 ```
