@@ -1,7 +1,8 @@
 import ast
 import re
-from collections import defaultdict
+import os
 from raven.rules import RULES
+from raven.file_utils import get_python_files
 
 
 def scan_regex(lines):
@@ -75,7 +76,6 @@ def deduplicate(findings):
                 grouped[key]["confidence"], f["confidence"]
             )
 
-    # convert type set → string
     final = []
     for f in grouped.values():
         f["type"] = "+".join(sorted(f["type"]))
@@ -85,8 +85,11 @@ def deduplicate(findings):
 
 
 def scan_file(path):
-    with open(path, "r", encoding="utf-8") as f:
-        code = f.read()
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            code = f.read()
+    except Exception:
+        return []
 
     lines = code.split("\n")
 
@@ -94,7 +97,20 @@ def scan_file(path):
     results.extend(scan_regex(lines))
     results.extend(scan_ast(code))
 
-    # 🔥 dedup here
-    results = deduplicate(results)
+    return deduplicate(results)
+
+
+# 🔥 DIRECTORY SCANNER
+def scan_path(path):
+    if os.path.isfile(path):
+        return {path: scan_file(path)}
+
+    results = {}
+    files = get_python_files(path)
+
+    for file in files:
+        findings = scan_file(file)
+        if findings:
+            results[file] = findings
 
     return results

@@ -1,0 +1,334 @@
+
+    <html>
+    <head>
+        <title>RAVE3N Report</title>
+        <style>
+            body {
+                font-family: Arial;
+                background: #0d1117;
+                color: #e6edf3;
+                padding: 20px;
+            }
+            h1 {
+                color: #58a6ff;
+            }
+            .summary {
+                margin: 15px 0;
+                font-size: 18px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th, td {
+                padding: 10px;
+                border-bottom: 1px solid #30363d;
+                text-align: left;
+            }
+            th {
+                background: #161b22;
+            }
+            .file-row {
+                color: #58a6ff;
+                font-weight: bold;
+                background: #0b1320;
+            }
+        </style>
+    </head>
+    <body>
+
+    <h1>🦅 RAVE3N Security Report</h1>
+    <p>Generated: 2026-04-25 22:47:05.734236</p>
+
+    <div class="summary">
+        🔴 HIGH: 18 &nbsp;&nbsp;
+        🟡 MEDIUM: 8 &nbsp;&nbsp;
+        🟢 LOW: 0
+    </div>
+
+    <table>
+        <tr>
+            <th>Severity</th>
+            <th>Line</th>
+            <th>Type</th>
+            <th>Message</th>
+            <th>Fix</th>
+        </tr>
+    
+            <tr class="file-row">
+                <td colspan="5">📂 tests\test.py</td>
+            </tr>
+            
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>67</td>
+            <td>regex</td>
+            <td>MD5 is insecure for cryptographic purposes</td>
+            <td>Use SHA-256 or bcrypt</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>90</td>
+            <td>regex</td>
+            <td>MD5 is insecure for cryptographic purposes</td>
+            <td>Use SHA-256 or bcrypt</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>163</td>
+            <td>regex</td>
+            <td>shell=True can lead to command injection</td>
+            <td>Set shell=False and pass arguments as list</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>208</td>
+            <td>regex</td>
+            <td>pickle.load() is unsafe with untrusted data</td>
+            <td>Avoid pickle; use JSON or safe formats</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>220</td>
+            <td>regex</td>
+            <td>Use of eval() can lead to code execution</td>
+            <td>Use ast.literal_eval() instead of eval()</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>220</td>
+            <td>ast</td>
+            <td>eval() usage detected</td>
+            <td>Use ast.literal_eval() instead</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ffcc00; font-weight:bold;">
+                MEDIUM
+            </td>
+            <td>163</td>
+            <td>regex</td>
+            <td>Check subprocess usage for injection risks</td>
+            <td>Ensure inputs are sanitized</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ffcc00; font-weight:bold;">
+                MEDIUM
+            </td>
+            <td>201</td>
+            <td>regex</td>
+            <td>Bare except hides errors</td>
+            <td>Catch specific exceptions</td>
+        </tr>
+        
+            <tr class="file-row">
+                <td colspan="5">📂 tests\test1.py</td>
+            </tr>
+            
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>55</td>
+            <td>regex</td>
+            <td>MD5 is insecure for cryptographic purposes</td>
+            <td>Use SHA-256 or bcrypt</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>66</td>
+            <td>regex</td>
+            <td>Possible SQL injection via string concatenation</td>
+            <td>Use parameterized queries</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>66</td>
+            <td>regex</td>
+            <td>MD5 is insecure for cryptographic purposes</td>
+            <td>Use SHA-256 or bcrypt</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>124</td>
+            <td>regex</td>
+            <td>pickle.load() is unsafe with untrusted data</td>
+            <td>Avoid pickle; use JSON or safe formats</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>134</td>
+            <td>regex</td>
+            <td>Use of eval() can lead to code execution</td>
+            <td>Use ast.literal_eval() instead of eval()</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>134</td>
+            <td>ast</td>
+            <td>eval() usage detected</td>
+            <td>Use ast.literal_eval() instead</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ffcc00; font-weight:bold;">
+                MEDIUM
+            </td>
+            <td>101</td>
+            <td>regex</td>
+            <td>Check subprocess usage for injection risks</td>
+            <td>Ensure inputs are sanitized</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ffcc00; font-weight:bold;">
+                MEDIUM
+            </td>
+            <td>125</td>
+            <td>regex</td>
+            <td>Bare except hides errors</td>
+            <td>Catch specific exceptions</td>
+        </tr>
+        
+            <tr class="file-row">
+                <td colspan="5">📂 tests\test2.py</td>
+            </tr>
+            
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>24</td>
+            <td>regex</td>
+            <td>Possible AWS access key exposed</td>
+            <td>Rotate credentials immediately and use IAM roles</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>46</td>
+            <td>regex</td>
+            <td>Possible SQL injection via string concatenation</td>
+            <td>Use parameterized queries</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>46</td>
+            <td>regex</td>
+            <td>SHA1 is deprecated for security use</td>
+            <td>Use SHA-256 or stronger algorithms</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>58</td>
+            <td>regex</td>
+            <td>shell=True can lead to command injection</td>
+            <td>Set shell=False and pass arguments as list</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>64</td>
+            <td>regex</td>
+            <td>Use of exec() is dangerous</td>
+            <td>Avoid exec(); use safer alternatives</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ff4d4d; font-weight:bold;">
+                HIGH
+            </td>
+            <td>64</td>
+            <td>ast</td>
+            <td>exec() usage detected</td>
+            <td>Avoid exec()</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ffcc00; font-weight:bold;">
+                MEDIUM
+            </td>
+            <td>46</td>
+            <td>regex</td>
+            <td>Hardcoded password detected</td>
+            <td>Use environment variables or secure vaults</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ffcc00; font-weight:bold;">
+                MEDIUM
+            </td>
+            <td>58</td>
+            <td>regex</td>
+            <td>Check subprocess usage for injection risks</td>
+            <td>Ensure inputs are sanitized</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ffcc00; font-weight:bold;">
+                MEDIUM
+            </td>
+            <td>65</td>
+            <td>regex</td>
+            <td>Bare except hides errors</td>
+            <td>Catch specific exceptions</td>
+        </tr>
+        
+        <tr>
+            <td style="color:#ffcc00; font-weight:bold;">
+                MEDIUM
+            </td>
+            <td>117</td>
+            <td>regex</td>
+            <td>Bare except hides errors</td>
+            <td>Catch specific exceptions</td>
+        </tr>
+        
+    </table>
+    </body>
+    </html>
+    
