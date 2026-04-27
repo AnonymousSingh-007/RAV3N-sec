@@ -1,8 +1,7 @@
 import typer
 import os
 from rich.console import Console
-from rich.table import Table
-from rich import box
+from rich.tree import Tree
 from collections import Counter
 
 from raven.scanner import scan_path
@@ -15,19 +14,36 @@ console = Console()
 SEVERITY_ORDER = {"HIGH": 3, "MEDIUM": 2, "LOW": 1}
 
 
-@app.command()
+@app.command(help="""
+Scan files or directories for vulnerabilities.
+
+Examples:
+
+  python -m raven.cli scan app.py
+  python -m raven.cli scan ./project --min-severity MEDIUM
+  python -m raven.cli scan . --html --output report.html
+  python -m raven.cli scan . --show-all
+  python -m raven.cli scan . --use-ml
+
+Options:
+
+  --min-severity [LOW|MEDIUM|HIGH]   Filter by severity
+  --show-all                         Show noisy results
+  --use-ml / --no-ml                 Enable ML detection
+  --html                             Generate HTML report
+""")
 def scan(
     path: str,
     html: bool = False,
     output: str = "report.html",
     min_severity: str = "LOW",
     show_all: bool = False,
-    use_ml: bool = True
+    use_ml: bool = True,
+    min_confidence: float = 0.75
 ):
     """Scan a file or directory for vulnerabilities"""
 
     results_map = scan_path(path)
-
     all_results = []
 
     # 📂 Flatten results
@@ -36,7 +52,7 @@ def scan(
             r["file"] = os.path.relpath(file)
             all_results.append(r)
 
-    # 🤖 ML scanning per file
+    # 🤖 ML scanning
     if use_ml:
         for file in results_map:
             try:
@@ -46,12 +62,12 @@ def scan(
                 for i, line in enumerate(lines, start=1):
                     pred, prob = predict(line)
 
-                    if pred == 1 and prob > 0.75:
+                    if pred == 1 and prob > min_confidence:
                         all_results.append({
                             "file": os.path.relpath(file),
                             "line": i,
                             "severity": "MEDIUM",
-                            "message": f"ML suspicious pattern ({prob:.2f})",
+                            "message": "ML detected potential vulnerability",
                             "type": "ml",
                             "confidence": prob,
                             "noisy": False,
@@ -71,7 +87,7 @@ def scan(
         if r.get("noisy") and not show_all:
             continue
 
-        if r["type"] == "ml" and r["confidence"] < 0.75:
+        if r["type"] == "ml" and r.get("confidence", 0) < min_confidence:
             continue
 
         filtered.append(r)
@@ -95,18 +111,15 @@ def scan(
         f"[green]LOW:[/green] {counts.get('LOW',0)}\n"
     )
 
-    table = Table(box=box.ROUNDED)
-    table.add_column("Severity")
-    table.add_column("Line")
-    table.add_column("Type")
-    table.add_column("Message")
-    table.add_column("Fix")
+    # 🌳 TREE OUTPUT (clean + readable)
+    tree = Tree("[bold red]📊 Scan Results[/bold red]")
 
     current_file = None
+    file_node = None
 
     for r in filtered:
         if r["file"] != current_file:
-            console.print(f"\n[bold cyan]📂 {r['file']}[/bold cyan]")
+            file_node = tree.add(f"[bold cyan]📂 {r['file']}[/bold cyan]")
             current_file = r["file"]
 
         color = {
@@ -115,15 +128,18 @@ def scan(
             "LOW": "green"
         }[r["severity"]]
 
-        table.add_row(
-            f"[{color}]{r['severity']}[/{color}]",
-            str(r["line"]),
-            r["type"],
-            r["message"],
-            r.get("fix", "")
+        confidence_text = ""
+        if "confidence" in r:
+            confidence_text = f" [dim](conf: {r['confidence']:.2f})[/dim]"
+
+        file_node.add(
+            f"[{color}]{r['severity']}[/{color}] "
+            f"(line {r['line']}) [{r['type']}] → {r['message']}"
+            f"{confidence_text}\n"
+            f"[dim]Fix: {r.get('fix','')}[/dim]"
         )
 
-    console.print(table)
+    console.print(tree)
 
     # 📄 HTML Report
     if html:
