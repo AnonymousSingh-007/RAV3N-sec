@@ -1,13 +1,10 @@
 # raven/features.py
 
-import re
-
-
 def extract_features(line: str):
     line_lower = line.lower()
 
     return [
-        # 🔥 Dangerous functions
+        # 🔥 Dangerous execution
         int("eval(" in line),
         int("exec(" in line),
         int("os.system" in line),
@@ -27,7 +24,7 @@ def extract_features(line: str):
 
         # 🌐 Network risks
         int("http://" in line_lower),
-        int("verify=False" in line),
+        int("verify=false" in line_lower),
 
         # 🔐 Crypto issues
         int("md5" in line_lower),
@@ -36,7 +33,7 @@ def extract_features(line: str):
         # 🧠 Prompt / AI risk
         int("f\"" in line or "f'" in line),
 
-        # 📏 Structural features
+        # 📏 Structural signals
         len(line),
         line.count("("),
         line.count("="),

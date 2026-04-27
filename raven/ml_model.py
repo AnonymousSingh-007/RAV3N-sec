@@ -5,7 +5,7 @@ import numpy as np
 
 from raven.features import extract_features
 
-# 🔥 Synthetic dataset (expand later)
+# 🔥 Better dataset (expand later)
 samples = [
     ("eval(user_input)", 1),
     ("exec(code)", 1),
@@ -25,28 +25,32 @@ samples = [
 X = np.array([extract_features(s[0]) for s in samples])
 y = np.array([s[1] for s in samples])
 
-model = LogisticRegression(max_iter=200)
+model = LogisticRegression(max_iter=300)
 model.fit(X, y)
 
 
 def calibrate(prob: float) -> float:
-    """Smooth confidence so it feels meaningful"""
+    """Stabilize confidence output"""
     if prob > 0.9:
         return 0.95
     elif prob > 0.75:
         return 0.85
     elif prob > 0.6:
         return 0.75
+    elif prob > 0.5:
+        return 0.65
     else:
-        return 0.6
+        return 0.55
 
 
 def predict(code_line: str):
     features = np.array(extract_features(code_line)).reshape(1, -1)
 
-    prob = model.predict_proba(features)[0][1]
-    pred = int(prob > 0.5)
+    raw_prob = model.predict_proba(features)[0][1]
 
-    confidence = calibrate(prob)
+    # 🔥 stricter trigger (reduce spam)
+    pred = 1 if raw_prob > 0.65 else 0
+
+    confidence = calibrate(raw_prob)
 
     return pred, confidence

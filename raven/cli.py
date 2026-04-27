@@ -24,13 +24,6 @@ Examples:
   python -m raven.cli scan . --html --output report.html
   python -m raven.cli scan . --show-all
   python -m raven.cli scan . --use-ml
-
-Options:
-
-  --min-severity [LOW|MEDIUM|HIGH]   Filter by severity
-  --show-all                         Show noisy results
-  --use-ml / --no-ml                 Enable ML detection
-  --html                             Generate HTML report
 """)
 def scan(
     path: str,
@@ -46,33 +39,48 @@ def scan(
     results_map = scan_path(path)
     all_results = []
 
-    # 📂 Flatten results
+    # 📂 Flatten rule results
     for file, findings in results_map.items():
         for r in findings:
             r["file"] = os.path.relpath(file)
             all_results.append(r)
 
-    # 🤖 ML scanning
+    # 🤖 ML scanning (CONTROLLED)
     if use_ml:
         for file in results_map:
             try:
                 with open(file, "r", encoding="utf-8") as f:
                     lines = f.readlines()
 
+                ml_hits = 0
+                MAX_ML_HITS = 20  # 🔥 prevents explosion
+
                 for i, line in enumerate(lines, start=1):
+                    if ml_hits >= MAX_ML_HITS:
+                        break
+
                     pred, prob = predict(line)
 
-                    if pred == 1 and prob > min_confidence:
+                    # 🔥 Avoid duplicate detection on same line
+                    already_flagged = any(
+                        r["file"] == os.path.relpath(file) and r["line"] == i
+                        for r in all_results
+                    )
+
+                    if pred == 1 and prob > min_confidence and not already_flagged:
+                        ml_hits += 1
+
                         all_results.append({
                             "file": os.path.relpath(file),
                             "line": i,
                             "severity": "MEDIUM",
-                            "message": f"ML detected anomaly",
+                            "message": "ML detected anomaly",
                             "type": "ml",
                             "confidence": prob,
-                            "noisy": False,
+                            "noisy": True,  # 🔥 mark as noisy
                             "fix": "Review this code for unsafe patterns"
                         })
+
             except Exception:
                 continue
 
@@ -111,7 +119,7 @@ def scan(
         f"[green]LOW:[/green] {counts.get('LOW',0)}\n"
     )
 
-    # 🌳 TREE OUTPUT (clean + readable)
+    # 🌳 TREE OUTPUT
     tree = Tree("[bold red]📊 Scan Results[/bold red]")
 
     current_file = None
@@ -141,7 +149,7 @@ def scan(
 
     console.print(tree)
 
-    # 📄 HTML Report
+    # 📄 HTML
     if html:
         generate_html(filtered, output)
         console.print(f"\n[cyan]📄 HTML report generated: {output}[/cyan]")
