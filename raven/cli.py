@@ -67,7 +67,7 @@ def scan(
                             "file": os.path.relpath(file),
                             "line": i,
                             "severity": "MEDIUM",
-                            "message": "ML detected potential vulnerability",
+                            "message": f"ML detected anomaly",
                             "type": "ml",
                             "confidence": prob,
                             "noisy": False,
