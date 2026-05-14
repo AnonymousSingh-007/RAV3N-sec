@@ -1,40 +1,40 @@
 # raven/features.py
 
-def extract_features(line: str):
-    line_lower = line.lower()
+import re
 
-    return [
-        # 🔥 Dangerous execution
-        int("eval(" in line),
-        int("exec(" in line),
-        int("os.system" in line),
-        int("subprocess" in line),
-        int("pickle.load" in line),
-        int("yaml.load" in line),
 
-        # 💉 Injection patterns
-        int("select" in line_lower and "+" in line),
-        int("%" in line and "execute" in line_lower),
-        int("input(" in line),
+KEYWORDS = [
+    "eval",
+    "exec",
+    "pickle",
+    "subprocess",
+    "os.system",
+    "shell=True",
+    "input",
+    "password",
+    "token",
+    "md5",
+    "yaml.load",
+]
 
-        # 🔑 Secrets
-        int("password" in line_lower),
-        int("api_key" in line_lower or "apikey" in line_lower),
-        int("token" in line_lower),
 
-        # 🌐 Network risks
-        int("http://" in line_lower),
-        int("verify=false" in line_lower),
+def extract_features(code):
 
-        # 🔐 Crypto issues
-        int("md5" in line_lower),
-        int("sha1" in line_lower),
+    features = []
 
-        # 🧠 Prompt / AI risk
-        int("f\"" in line or "f'" in line),
+    code_lower = code.lower()
 
-        # 📏 Structural signals
-        len(line),
-        line.count("("),
-        line.count("="),
-    ]
+    # keyword presence
+    for keyword in KEYWORDS:
+
+        features.append(
+            1 if keyword.lower() in code_lower else 0
+        )
+
+    # length
+    features.append(len(code))
+
+    # special chars
+    features.append(len(re.findall(r"[(){};]", code)))
+
+    return features

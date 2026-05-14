@@ -6,7 +6,7 @@ It contains a mix of BIG and subtle vulnerabilities for learning purposes
 (code review, pentesting practice, etc.). 
 DO NOT run this on any real system, expose to the internet, or use in production.
 """
-
+# tests/test.py
 import os
 import sys
 import sqlite3

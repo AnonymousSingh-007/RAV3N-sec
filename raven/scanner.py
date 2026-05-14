@@ -1,16 +1,32 @@
+# raven/scanner.py
+
 import ast
 import re
 import os
+
 from raven.rules import RULES
 from raven.file_utils import get_python_files
+from raven.models import RavenModel
+
+
+# LOAD ML MODEL
+ml_model = RavenModel()
+
+try:
+    ml_model.load()
+except:
+    ml_model = None
 
 
 def scan_regex(lines):
     findings = []
 
     for i, line in enumerate(lines, start=1):
+
         for rule in RULES:
+
             if re.search(rule["pattern"], line):
+
                 findings.append({
                     "line": i,
                     "severity": rule["severity"],
@@ -33,8 +49,11 @@ def scan_ast(code):
         return findings
 
     for node in ast.walk(tree):
+
         if isinstance(node, ast.Call):
+
             if hasattr(node.func, "id"):
+
                 if node.func.id == "eval":
                     findings.append({
                         "line": node.lineno,
@@ -60,56 +79,96 @@ def scan_ast(code):
     return findings
 
 
-# 🔥 DEDUP ENGINE
+def scan_ml(lines):
+    findings = []
+
+    if ml_model is None:
+        return findings
+
+    for i, line in enumerate(lines, start=1):
+
+        pred, confidence = ml_model.predict(line)
+
+        if pred == 1 and confidence > 0.70:
+
+            findings.append({
+                "line": i,
+                "severity": "MEDIUM",
+                "message": "ML suspicious pattern detected",
+                "type": "ml",
+                "confidence": confidence,
+                "noisy": True,
+                "fix": "Review this code manually"
+            })
+
+    return findings
+
+
 def deduplicate(findings):
     grouped = {}
 
     for f in findings:
+
         key = (f["line"], f["message"])
 
         if key not in grouped:
+
             grouped[key] = f.copy()
             grouped[key]["type"] = {f["type"]}
+
         else:
+
             grouped[key]["type"].add(f["type"])
+
             grouped[key]["confidence"] = max(
-                grouped[key]["confidence"], f["confidence"]
+                grouped[key]["confidence"],
+                f["confidence"]
             )
 
     final = []
+
     for f in grouped.values():
+
         f["type"] = "+".join(sorted(f["type"]))
+
         final.append(f)
 
     return final
 
 
 def scan_file(path):
+
     try:
         with open(path, "r", encoding="utf-8") as f:
             code = f.read()
+
     except Exception:
         return []
 
     lines = code.split("\n")
 
     results = []
+
     results.extend(scan_regex(lines))
     results.extend(scan_ast(code))
+    results.extend(scan_ml(lines))
 
     return deduplicate(results)
 
 
-# 🔥 DIRECTORY SCANNER
 def scan_path(path):
+
     if os.path.isfile(path):
         return {path: scan_file(path)}
 
     results = {}
+
     files = get_python_files(path)
 
     for file in files:
+
         findings = scan_file(file)
+
         if findings:
             results[file] = findings
 

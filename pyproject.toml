@@ -2,7 +2,7 @@
 name = "rave3n-sec"
 version = "0.1.0"
 description = "AI + Regex Vulnerability Scanner"
-authors = [{name = "Your Name"}]
+authors = [{name = "Shadow Byte"}]
 dependencies = ["typer", "rich"]
 
 [project.scripts]
