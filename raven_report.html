@@ -1,0 +1,2790 @@
+
+    <html>
+    <head>
+        <title>RAV3N-sec Report</title>
+        <style>
+            body {
+                font-family: Arial;
+                background: #111;
+                color: #eee;
+                padding: 20px;
+            }
+
+            .finding {
+                border: 1px solid #444;
+                margin-bottom: 15px;
+                padding: 15px;
+                border-radius: 8px;
+            }
+
+            .HIGH { border-left: 6px solid red; }
+            .CRITICAL { border-left: 6px solid darkred; }
+            .MEDIUM { border-left: 6px solid orange; }
+            .LOW { border-left: 6px solid green; }
+
+        </style>
+    </head>
+    <body>
+
+    <h1>RAV3N-sec Scan Report</h1>
+    <h2>tests\test.py</h2>
+            <div class='finding MEDIUM'>
+                <h3>Weak hash algorithm detected</h3>
+
+                <p><b>Line:</b> 67</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> regex</p>
+                <p><b>Confidence:</b> 0.8</p>
+                <p><b>Fix:</b> Use SHA-256 or bcrypt</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>Weak hash algorithm detected</h3>
+
+                <p><b>Line:</b> 90</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> regex</p>
+                <p><b>Confidence:</b> 0.8</p>
+                <p><b>Fix:</b> Use SHA-256 or bcrypt</p>
+            </div>
+            
+            <div class='finding CRITICAL'>
+                <h3>Shell injection risk</h3>
+
+                <p><b>Line:</b> 163</p>
+                <p><b>Severity:</b> CRITICAL</p>
+                <p><b>Type:</b> regex</p>
+                <p><b>Confidence:</b> 0.98</p>
+                <p><b>Fix:</b> Avoid shell=True</p>
+            </div>
+            
+            <div class='finding HIGH'>
+                <h3>Unsafe pickle deserialization</h3>
+
+                <p><b>Line:</b> 208</p>
+                <p><b>Severity:</b> HIGH</p>
+                <p><b>Type:</b> regex</p>
+                <p><b>Confidence:</b> 0.92</p>
+                <p><b>Fix:</b> Avoid untrusted pickle data</p>
+            </div>
+            
+            <div class='finding CRITICAL'>
+                <h3>eval() usage detected</h3>
+
+                <p><b>Line:</b> 220</p>
+                <p><b>Severity:</b> CRITICAL</p>
+                <p><b>Type:</b> ast+regex</p>
+                <p><b>Confidence:</b> 0.98</p>
+                <p><b>Fix:</b> Avoid eval(); use safer parsing</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 3</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 4</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 5</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 6</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 7</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.93</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 24</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 25</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.72</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 26</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 28</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.84</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 29</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.92</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 30</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 31</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 33</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 34</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 37</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 40</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 43</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.82</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 44</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 47</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 48</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 49</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 51</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 54</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 56</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 59</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 66</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.81</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 67</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.98</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 69</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.97</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 70</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 1.0</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 75</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 85</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 87</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 88</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 89</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.91</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 90</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.98</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 92</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 93</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 96</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 98</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 99</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 100</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.93</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 103</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 106</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.99</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 107</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.92</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 109</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.92</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 110</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 116</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.84</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 117</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.83</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 118</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.82</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 123</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 124</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 125</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 126</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.93</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 127</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 129</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.83</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 131</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 133</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.71</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 134</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 135</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.99</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 138</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 140</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 142</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.82</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 147</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.84</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 148</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 150</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.92</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 155</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 157</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 158</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 159</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 162</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 163</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 166</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.83</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 168</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 170</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 171</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 172</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 173</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 174</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 175</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.94</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 177</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.81</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 178</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 180</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.84</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 182</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 187</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 190</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 193</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 195</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 197</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.84</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 199</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 200</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.81</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 205</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 207</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 208</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 210</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.81</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 213</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 215</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 216</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 217</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.84</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 219</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.73</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 220</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.99</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 223</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.72</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 225</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 227</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 229</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.83</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 230</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 231</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.97</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 233</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 235</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 239</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.86</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 241</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.91</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 254</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.98</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 255</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 256</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.83</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 257</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.72</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 259</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 260</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 261</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 264</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 268</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 269</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 270</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 273</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 274</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 275</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 277</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.84</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 279</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.91</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 280</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 281</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 282</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.91</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 288</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.81</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 292</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 293</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.91</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 295</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 296</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.95</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 297</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.84</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 299</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.92</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 300</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 301</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 303</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.97</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 304</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.86</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 305</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 307</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 308</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.91</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 309</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 310</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 312</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 313</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.81</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 315</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 316</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 317</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 318</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.91</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 320</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.95</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 324</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.72</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 326</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 328</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 332</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.83</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 336</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 339</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            <h2>tests\test1.py</h2>
+            <div class='finding MEDIUM'>
+                <h3>Weak hash algorithm detected</h3>
+
+                <p><b>Line:</b> 55</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> regex</p>
+                <p><b>Confidence:</b> 0.8</p>
+                <p><b>Fix:</b> Use SHA-256 or bcrypt</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>Weak hash algorithm detected</h3>
+
+                <p><b>Line:</b> 66</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> regex</p>
+                <p><b>Confidence:</b> 0.8</p>
+                <p><b>Fix:</b> Use SHA-256 or bcrypt</p>
+            </div>
+            
+            <div class='finding HIGH'>
+                <h3>Unsafe pickle deserialization</h3>
+
+                <p><b>Line:</b> 124</p>
+                <p><b>Severity:</b> HIGH</p>
+                <p><b>Type:</b> regex</p>
+                <p><b>Confidence:</b> 0.92</p>
+                <p><b>Fix:</b> Avoid untrusted pickle data</p>
+            </div>
+            
+            <div class='finding CRITICAL'>
+                <h3>eval() usage detected</h3>
+
+                <p><b>Line:</b> 134</p>
+                <p><b>Severity:</b> CRITICAL</p>
+                <p><b>Type:</b> ast+regex</p>
+                <p><b>Confidence:</b> 0.98</p>
+                <p><b>Fix:</b> Avoid eval(); use safer parsing</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 3</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.81</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 4</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 5</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 24</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 25</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 27</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 31</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.82</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 32</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 39</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 41</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.92</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 48</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 50</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.72</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 55</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.99</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 56</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.98</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 63</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 64</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 66</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 1.0</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 68</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.73</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 70</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.91</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 72</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.82</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 80</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 81</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.83</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 83</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.81</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 84</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 86</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.94</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 88</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 90</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 91</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 99</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.86</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 101</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.97</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 102</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.93</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 105</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 107</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.83</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 110</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 118</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 119</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 123</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 124</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.95</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 131</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 134</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.97</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 136</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.75</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 144</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 146</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 155</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 156</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.73</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 157</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 158</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 159</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 160</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.82</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 163</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 167</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 168</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.86</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 169</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 171</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.91</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 173</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 178</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 179</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.83</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 182</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 183</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.84</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 185</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.97</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 186</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.89</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 188</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.95</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 189</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.81</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 191</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.97</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 192</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 195</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.72</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 201</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.76</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            <h2>tests\test2.py</h2>
+            <div class='finding MEDIUM'>
+                <h3>Weak SHA1 detected</h3>
+
+                <p><b>Line:</b> 46</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> regex</p>
+                <p><b>Confidence:</b> 0.8</p>
+                <p><b>Fix:</b> Use SHA-256+</p>
+            </div>
+            
+            <div class='finding HIGH'>
+                <h3>Hardcoded secret detected</h3>
+
+                <p><b>Line:</b> 46</p>
+                <p><b>Severity:</b> HIGH</p>
+                <p><b>Type:</b> regex</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Use environment variables</p>
+            </div>
+            
+            <div class='finding CRITICAL'>
+                <h3>Shell injection risk</h3>
+
+                <p><b>Line:</b> 58</p>
+                <p><b>Severity:</b> CRITICAL</p>
+                <p><b>Type:</b> regex</p>
+                <p><b>Confidence:</b> 0.98</p>
+                <p><b>Fix:</b> Avoid shell=True</p>
+            </div>
+            
+            <div class='finding CRITICAL'>
+                <h3>exec() usage detected</h3>
+
+                <p><b>Line:</b> 64</p>
+                <p><b>Severity:</b> CRITICAL</p>
+                <p><b>Type:</b> ast+regex</p>
+                <p><b>Confidence:</b> 0.98</p>
+                <p><b>Fix:</b> Avoid exec()</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 3</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 4</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.86</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 15</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.71</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 21</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.86</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 24</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 26</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 32</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 34</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.99</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 35</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.97</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 42</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.88</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 43</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.77</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 46</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 1.0</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 50</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.95</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 55</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 57</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.93</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 58</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.8</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 60</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 63</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 64</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 72</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.98</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 73</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.82</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 82</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.81</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 88</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 90</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.97</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 91</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.96</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 93</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 97</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 98</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 99</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.79</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 101</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.93</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 106</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.91</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 107</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.87</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 108</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.78</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 110</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.9</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 111</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.74</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 113</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.84</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 115</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.85</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            
+            <div class='finding MEDIUM'>
+                <h3>ML suspicious pattern detected</h3>
+
+                <p><b>Line:</b> 116</p>
+                <p><b>Severity:</b> MEDIUM</p>
+                <p><b>Type:</b> ml</p>
+                <p><b>Confidence:</b> 0.8</p>
+                <p><b>Fix:</b> Review this code manually</p>
+            </div>
+            </body></html>
